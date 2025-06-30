@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biblioteca de Componentes UI - Demo</title>
+
+  <!-- Estilos base -->
+  <link rel="stylesheet" href="styles/base.css" />
+
+  <!-- Componentes -->
+  <link rel="stylesheet" href="components/buttons.css" />
+  <link rel="stylesheet" href="components/cards.css" />
+  <link rel="stylesheet" href="components/forms.css" />
+  <link rel="stylesheet" href="components/navbar.css" />
+  <link rel="stylesheet" href="components/modal.css" />
+  <link rel="stylesheet" href="components/tooltip.css" />
+  <link rel="stylesheet" href="components/alerts.css" />
+  <link rel="stylesheet" href="components/accordion.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar__brand">Mi Sitio</div>
+
+    <div class="navbar__toggle" onclick="document.querySelector('.navbar__menu').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="navbar__menu">
+      <a href="#" class="navbar__link">Inicio</a>
+      <a href="#" class="navbar__link">Servicios</a>
+      <a href="#" class="navbar__link">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Biblioteca de Componentes UI</h1>
+
+    <!-- Botones -->
+    <section>
+      <h2>Botones</h2>
+      <button class="btn btn--primary">Primario</button>
+      <button class="btn btn--secondary">Secundario</button>
+      <button class="btn btn--disabled" disabled>Deshabilitado</button>
+    </section>
+
+    <!-- Tarjetas -->
+    <section>
+      <h2>Tarjetas</h2>
+      <div class="card">
+        <img class="card__img" src="https://picsum.photos/300/180" alt="Imagen de ejemplo" />
+        <div class="card__body">
+          <h3 class="card__title">Título de la tarjeta</h3>
+          <p class="card__text">Esta es una descripción breve de la tarjeta. Aquí puedes colocar cualquier contenido relacionado.</p>
+          <button class="btn btn--primary">Ver más</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario -->
+    <section>
+      <h2>Formulario</h2>
+      <form class="form" novalidate>
+        <div class="form__group">
+          <label for="nombre" class="form__label">Nombre</label>
+          <input type="text" id="nombre" name="nombre" class="form__input" required />
+        </div>
+
+        <div class="form__group">
+          <label for="mensaje" class="form__label">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" class="form__textarea" rows="4" required></textarea>
+        </div>
+
+        <div class="form__group">
+          <label for="opcion" class="form__label">Opciones</label>
+          <select id="opcion" name="opcion" class="form__select">
+            <option value="">Seleccione una opción</option>
+            <option value="1">Opción 1</option>
+            <option value="2">Opción 2</option>
+          </select>
+        </div>
+
+        <div class="form__group form__checkbox">
+          <input type="checkbox" id="acepto" class="form__input" required />
+          <label for="acepto" class="form__label">Acepto los términos</label>
+        </div>
+
+        <button type="submit" class="btn btn--primary form__submit">Enviar</button>
+      </form>
+    </section>
+
+    <!-- Modal -->
+    <section>
+      <h2>Modal</h2>
+      <button class="btn btn--primary" onclick="document.querySelector('#modal1').classList.add('active')">Abrir Modal</button>
+      <div id="modal1" class="modal">
+        <div class="modal__content">
+          <button class="modal__close" onclick="document.querySelector('#modal1').classList.remove('active')">&times;</button>
+          <h3>¡Hola, soy un Modal!</h3>
+          <p>Este es un mensaje dentro de una ventana emergente.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tooltip -->
+    <section>
+      <h2>Tooltip</h2>
+      <div class="tooltip">
+        <span class="btn btn--secondary">Pasa el mouse</span>
+        <div class="tooltip__text">Este es un mensaje de ayuda o información.</div>
+      </div>
+    </section>
+
+    <!-- Alertas -->
+    <section>
+      <h2>Alertas</h2>
+      <div class="alert alert--success">¡Éxito! Tu formulario fue enviado correctamente.</div>
+      <div class="alert alert--warning">Atención: Algunos campos son obligatorios.</div>
+      <div class="alert alert--error">Error: No se pudo guardar la información.</div>
+    </section>
+
+    <!-- Acordeón -->
+    <section>
+      <h2>Acordeón</h2>
+      <div class="accordion">
+        <div class="accordion__item">
+          <label class="accordion__header" for="acc1">¿Qué es esta biblioteca?</label>
+          <input type="checkbox" class="accordion__input" id="acc1" />
+          <div class="accordion__content">
+            <p>Es una colección de componentes UI diseñados con CSS avanzado para ser reutilizables y responsivos.</p>
+          </div>
+        </div>
+        <div class="accordion__item">
+          <label class="accordion__header" for="acc2">¿Qué tecnologías se usaron?</label>
+          <input type="checkbox" class="accordion__input" id="acc2" />
+          <div class="accordion__content">
+            <p>Se utilizó HTML y CSS con flexbox, grid, pseudo-clases, animaciones y media queries.</p>
+          </div>
+        </div>
+        <div class="accordion__item">
+          <label class="accordion__header" for="acc3">¿Cómo se integra en un sitio?</label>
+          <input type="checkbox" class="accordion__input" id="acc3" />
+          <div class="accordion__content">
+            <p>Solo necesitas importar el CSS y copiar el HTML correspondiente para usar cada componente.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
